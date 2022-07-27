@@ -1,4 +1,45 @@
 :root {
+  --clr-neutral-900: hsl(220, 16%, 22%);
+  --clr-neutral-800: hsl(220, 16%, 28%);
+  --clr-neutral-700: hsl(220, 17%, 32%);
+  --clr-neutral-600: hsl(220, 16%, 36%);
+  --clr-neutral-400: hsl(219, 28%, 88%);
+  --clr-neutral-300: hsl(218, 27%, 92%);
+  --clr-neutral-200: hsl(218, 27%, 94%);
+
+  --clr-primary-600: hsl(179, 25%, 65%);
+  --clr-primary-500: hsl(193, 43%, 67%);
+
+  --clr-secondary-500: hsl(213, 32%, 52%);
+  --clr-secondary-400: hsl(210, 34%, 63%);
+
+  --ff-primary: 'Roboto Mono', sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-200: 13px;
+  --fs-300: 14px;
+  --fs-400: 16px;
+  --fs-500: 18px;
+  --fs-600: clamp(1.25rem, 5vw, 1.75rem);
+  --fs-700: clamp(1.5rem, 5vw, 2rem);
+  --fs-800: clamp(1.875rem, 5vw, 3.75rem);
+  --fs-900: clamp(2.125rem, 5vw, 5rem);
+
+  --fs-body: var(--fs-400);
+  --fs-nav: var(--fs-300);
+  --fs-button: var(--fs-300);
+  --fs-footer: var(--fs-200);
+}
+
+@media (min-width: 50em) {
+  :root {
+    --fs-nav: (--fs-400);
+  }
 }
 
 /* Box sizing rules */
@@ -8,8 +49,8 @@
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-/* Inherit fonts for inputs and buttons */
+/* Remove default margin and padding */
+/* Inherit fonts for everything */
 * {
   margin: 0;
   padding: 0;
