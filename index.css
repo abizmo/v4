@@ -22,15 +22,32 @@
   --fs-300: 14px;
   --fs-400: 16px;
   --fs-500: 18px;
-  --fs-600: clamp(1.25rem, 5vw, 1.75rem);
-  --fs-700: clamp(1.5rem, 5vw, 2rem);
+  --fs-600: clamp(1.25rem, 3vw, 1.75rem);
+  --fs-700: clamp(1.5rem, 4vw, 2rem);
   --fs-800: clamp(1.875rem, 5vw, 3.75rem);
-  --fs-900: clamp(2.125rem, 5vw, 5rem);
+  --fs-900: clamp(2.125rem, 7vw, 5rem);
 
   --fs-body: var(--fs-400);
   --fs-nav: var(--fs-300);
   --fs-button: var(--fs-300);
   --fs-footer: var(--fs-200);
+
+  --sizes-1: 0.25rem;
+  --sizes-2: 0.5rem;
+  --sizes-3: 0.75rem;
+  --sizes-4: 1rem;
+  --sizes-5: 1.5rem;
+  --sizes-6: 2rem;
+  --sizes-7: 2.5rem;
+  --sizes-8: 3rem;
+  --sizes-9: 3.5rem;
+  --sizes-10: 4rem;
+  --sizes-11: 4.5rem;
+  --sizes-12: 5rem;
+  --sizes-13: 5.5rem;
+  --sizes-14: 6rem;
+  --sizes-15: 6.5rem;
+  --sizes-16: 7rem;
 }
 
 @media (min-width: 50em) {
@@ -149,4 +166,68 @@ a:focus-visible {
 
   width: min(var(--max-width), 100% - (var(--padding) * 2));
   margin-inline: auto;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-5 {
+  gap: var(--sizes-5);
+}
+
+.gap-8 {
+  gap: var(--sizes-8);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.lh-heading {
+  line-height: 1.1;
 }
