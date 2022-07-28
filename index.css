@@ -159,6 +159,22 @@ a:focus-visible {
   color: var(--clr-neutral-200);
 }
 
+/* header */
+.primary-header {
+  position: absolute;
+}
+
+/* hero section */
+.hero-container {
+  align-content: center;
+  justify-items: start;
+  height: 100vh;
+}
+
+.intro {
+  max-width: 40rem;
+}
+
 /* utility classes */
 .container {
   --max-width: 1280px;
