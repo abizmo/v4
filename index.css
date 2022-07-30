@@ -52,7 +52,7 @@
 
 @media (min-width: 50em) {
   :root {
-    --fs-nav: (--fs-400);
+    --fs-nav: var(--fs-400);
   }
 }
 
