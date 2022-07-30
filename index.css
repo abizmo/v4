@@ -162,6 +162,64 @@ a:focus-visible {
 /* header */
 .primary-header {
   position: absolute;
+  inset: 0 0 auto;
+  padding-top: var(--sizes-5);
+}
+
+.nav-wrapper {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  font-size: var(--fs-nav);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: var(--sizes-8);
+}
+
+.primary-navigation {
+  /* display: none; */
+
+  position: fixed;
+  padding: var(--sizes-15) var(--sizes-8);
+  inset: 7rem var(--sizes-4) auto;
+  max-width: 25rem;
+  margin-left: auto;
+  border-radius: var(--sizes-100);
+  box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.15);
+  background: var(--clr-neutral-200);
+}
+
+.primary-header[data-overlay]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+}
+
+@media (min-width: 50em) {
+  .primary-header {
+    padding-top: var(--sizes-8);
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    align-items: center;
+    display: flex;
+  }
+
+  .primary-navigation {
+    display: block;
+    position: initial;
+    padding: 0;
+    max-width: initial;
+    box-shadow: none;
+  }
 }
 
 /* hero section */
