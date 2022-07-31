@@ -48,6 +48,7 @@
   --sizes-14: 6rem;
   --sizes-15: 6.5rem;
   --sizes-16: 7rem;
+
   --z-index-top: 9;
 }
 
@@ -137,8 +138,8 @@ a {
   transition: font-weight 100ms ease-in;
 }
 
-a:hover,
-a:focus-visible {
+a:not([class]):hover,
+a:not([class]):focus-visible {
   font-weight: var(--fw-bold);
 }
 
