@@ -290,12 +290,12 @@ h3:after {
   justify-items: center;
 }
 
-.about p {
+.content p {
   max-width: 40rem;
 }
 
 .about img {
-  filter: drop-shadow(2px 4px 6px black);
+  box-shadow: 4px 4px 16px var(--clr-neutral-900);
 }
 
 .technologies {
@@ -332,6 +332,13 @@ h3:after {
     place-content: center;
   }
 }
+
+/* contact section */
+.contact-container {
+  text-align: center;
+  justify-items: center;
+}
+
 /* footer */
 footer {
   padding-block: var(--sizes-6);
