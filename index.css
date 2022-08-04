@@ -4,6 +4,7 @@
   --clr-neutral-700: hsl(220, 17%, 32%);
   --clr-neutral-600: hsl(220, 16%, 36%);
   --clr-neutral-400: hsl(219, 28%, 88%);
+  --clr-neutral-308: hsl(218, 27%, 92%, 0.8);
   --clr-neutral-300: hsl(218, 27%, 92%);
   --clr-neutral-200: hsl(218, 27%, 94%);
 
@@ -333,6 +334,44 @@ h3:after {
   }
 }
 
+/* works section */
+.project {
+  background: var(--clr-primary-400) var(--bg-image, none) no-repeat center/auto
+    100%;
+  border-radius: var(--sizes-1);
+  overflow: hidden;
+}
+
+.project--media {
+  display: none;
+}
+
+.project--body {
+  background-color: var(--clr-neutral-308);
+  padding: var(--sizes-6) var(--sizes-4);
+  gap: var(--sizes-4);
+}
+
+.project--tools {
+  display: flex;
+  gap: var(--sizes-2);
+  flex-wrap: wrap;
+  font-size: var(--fs-300);
+}
+
+.project--links {
+  display: flex;
+  gap: var(--sizes-5);
+}
+
+.project--links a {
+  color: var(--clr-neutral-900);
+}
+
+.project--links a:hover {
+  color: var(--clr-primary-500);
+}
+
 /* contact section */
 .contact-container {
   text-align: center;
@@ -371,6 +410,11 @@ footer {
 }
 
 /* utility classes */
+.align-end {
+  margin-right: 0;
+  margin-left: auto;
+}
+
 .container {
   --max-width: 1280px;
   --padding: 1rem;
@@ -413,6 +457,10 @@ footer {
 
 .gap-8 {
   gap: var(--sizes-8);
+}
+
+.gap-10 {
+  gap: var(--sizes-10);
 }
 
 .fs-200 {
@@ -471,4 +519,8 @@ footer {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
