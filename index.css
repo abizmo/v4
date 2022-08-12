@@ -1,10 +1,11 @@
 :root {
+  --clr-neutral-907: hsl(220, 16%, 22%, 0.7);
   --clr-neutral-900: hsl(220, 16%, 22%);
   --clr-neutral-800: hsl(220, 16%, 28%);
   --clr-neutral-700: hsl(220, 17%, 32%);
   --clr-neutral-600: hsl(220, 16%, 36%);
   --clr-neutral-400: hsl(219, 28%, 88%);
-  --clr-neutral-308: hsl(218, 27%, 92%, 0.8);
+  --clr-neutral-309: hsl(218, 27%, 92%, 0.9);
   --clr-neutral-300: hsl(218, 27%, 92%);
   --clr-neutral-200: hsl(218, 27%, 94%);
 
@@ -336,27 +337,72 @@ h3:after {
 
 /* works section */
 .project {
-  background: var(--clr-primary-400) var(--bg-image, none) no-repeat center/auto
-    100%;
   border-radius: var(--sizes-1);
   overflow: hidden;
+  position: relative;
 }
 
-.project--media {
-  display: none;
+@media (max-width: 36.5rem) {
+  .project--media {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+  }
+
+  .project--media img {
+    height: 100%;
+    max-width: initial;
+  }
 }
 
 .project--body {
-  background-color: var(--clr-neutral-308);
+  background-color: var(--clr-neutral-309);
   padding: var(--sizes-6) var(--sizes-4);
   gap: var(--sizes-4);
+}
+
+@media (min-width: 36.6rem) {
+  .project {
+    --bg-image: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .project:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+
+  .project > div {
+    flex: 1;
+  }
+
+  .project--media {
+    display: block;
+  }
+
+  .project--body {
+    background-color: transparent;
+  }
+
+  .project--description {
+    background-color: var(--clr-neutral-300);
+    padding: var(--sizes-5);
+    box-shadow: 0px 10px 30px -15px var(--clr-neutral-907);
+    width: 125%;
+    border-radius: var(--sizes-1);
+  }
+
+  .project:nth-of-type(odd) .project--body {
+    justify-items: end;
+    text-align: right;
+  }
 }
 
 .project--tools {
   display: flex;
   gap: var(--sizes-2);
   flex-wrap: wrap;
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
 }
 
 .project--links {
