@@ -720,12 +720,13 @@ footer {
   transform: scale(1.1);
 }
 
-.social-icons a:active {
-  transform: scale(0.95);
+.social-icons a:hover i,
+.social-icons a:focus-visible i {
+  color: var(--clr-primary-500);
 }
 
-.social-icons i:hover {
-  color: var(--clr-primary-500);
+.social-icons a:active {
+  transform: scale(0.95);
 }
 
 @media (min-width: 50em) {
