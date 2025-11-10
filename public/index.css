@@ -327,6 +327,11 @@ a:not([class]):focus-visible {
   gap: var(--sizes-6);
 }
 
+.nav-list li {
+  display: flex;
+  justify-content: center;
+}
+
 .nav-list a,
 .nav-list button {
   min-height: var(--touch-target-min);
