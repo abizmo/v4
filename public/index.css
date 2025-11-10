@@ -273,26 +273,12 @@ a:not([class]):focus-visible {
   background: transparent;
   border: 0;
   cursor: pointer;
-  padding: 0.75rem;
   color: var(--clr-neutral-900);
-  transition: color 150ms ease, transform 200ms ease, background-color 200ms ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--touch-target-min);
-  min-width: var(--touch-target-min);
-  border-radius: 6px;
 }
 
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
   color: var(--clr-primary-500);
-  background-color: var(--clr-neutral-400);
-  transform: scale(1.05);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
 }
 
 .theme-toggle .icon-sun,
@@ -341,18 +327,21 @@ a:not([class]):focus-visible {
   gap: var(--sizes-6);
 }
 
-.nav-list a {
+.nav-list a,
+.nav-list button {
   min-height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1rem;
   border-radius: 6px;
-  transition: background-color 200ms ease;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 .nav-list a:hover,
-.nav-list a:focus-visible {
+.nav-list a:focus-visible,
+.nav-list button:hover,
+.nav-list button:focus-visible {
   background-color: var(--clr-neutral-400);
 }
 
@@ -395,11 +384,13 @@ a:not([class]):focus-visible {
   justify-content: center;
   border-radius: 6px;
   transition: background-color 200ms ease;
+  color: var(--clr-neutral-900);
 }
 
 .mobile-nav-toggle:hover,
 .mobile-nav-toggle:focus-visible {
   background-color: var(--clr-neutral-400);
+  color: var(--clr-primary-500);
 }
 
 .mobile-nav-toggle:active {
