@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Options - Portfolio Theme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      padding: 2rem;
+      background: #0a0a0a;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      line-height: 1.6;
+      color: #b0b0b0;
+    }
+
+    .palettes-container {
+      display: grid;
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .palette-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 2px solid #2a2a2a;
+      transition: border-color 300ms ease;
+    }
+
+    .palette-card:hover {
+      border-color: #4a4a4a;
+    }
+
+    .palette-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .palette-name {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .palette-description {
+      color: #888;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .theme-modes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .theme-modes {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .theme-preview {
+      border-radius: 8px;
+      padding: 1.5rem;
+      min-height: 400px;
+    }
+
+    .mode-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .preview-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-subtitle {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .preview-text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .preview-link {
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 200ms;
+    }
+
+    .preview-link:hover {
+      opacity: 0.8;
+    }
+
+    .preview-button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      border: 2px solid;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      transition: all 200ms ease;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .swatch {
+      text-align: center;
+    }
+
+    .swatch-color {
+      width: 100%;
+      height: 60px;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .swatch-label {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    /* Palette 1: Original Carbonfox */
+    .p1-dark {
+      background: hsl(0, 0%, 9%);
+      color: hsl(220, 25%, 96%);
+    }
+    .p1-dark .preview-link { color: hsl(215, 100%, 74%); }
+    .p1-dark .preview-button {
+      border-color: hsl(215, 100%, 74%);
+      color: hsl(215, 100%, 74%);
+    }
+    .p1-dark .preview-button:hover {
+      background: hsl(215, 100%, 74%);
+      color: hsl(0, 0%, 9%);
+    }
+
+    .p1-light {
+      background: hsl(215, 25%, 97%);
+      color: hsl(0, 0%, 12%);
+    }
+    .p1-light .preview-link { color: hsl(215, 85%, 60%); }
+    .p1-light .preview-button {
+      border-color: hsl(215, 85%, 60%);
+      color: hsl(215, 85%, 60%);
+    }
+    .p1-light .preview-button:hover {
+      background: hsl(215, 85%, 60%);
+      color: hsl(215, 25%, 97%);
+    }
+
+    /* Palette 2: Softer Carbonfox */
+    .p2-dark {
+      background: hsl(210, 15%, 12%);
+      color: hsl(210, 20%, 92%);
+    }
+    .p2-dark .preview-link { color: hsl(210, 90%, 70%); }
+    .p2-dark .preview-button {
+      border-color: hsl(210, 90%, 70%);
+      color: hsl(210, 90%, 70%);
+    }
+    .p2-dark .preview-button:hover {
+      background: hsl(210, 90%, 70%);
+      color: hsl(210, 15%, 12%);
+    }
+
+    .p2-light {
+      background: hsl(210, 25%, 98%);
+      color: hsl(210, 20%, 18%);
+    }
+    .p2-light .preview-link { color: hsl(210, 80%, 55%); }
+    .p2-light .preview-button {
+      border-color: hsl(210, 80%, 55%);
+      color: hsl(210, 80%, 55%);
+    }
+    .p2-light .preview-button:hover {
+      background: hsl(210, 80%, 55%);
+      color: hsl(210, 25%, 98%);
+    }
+
+    /* Palette 3: Nord-inspired */
+    .p3-dark {
+      background: hsl(220, 16%, 14%);
+      color: hsl(218, 27%, 94%);
+    }
+    .p3-dark .preview-link { color: hsl(210, 34%, 63%); }
+    .p3-dark .preview-button {
+      border-color: hsl(210, 34%, 63%);
+      color: hsl(210, 34%, 63%);
+    }
+    .p3-dark .preview-button:hover {
+      background: hsl(210, 34%, 63%);
+      color: hsl(220, 16%, 14%);
+    }
+
+    .p3-light {
+      background: hsl(218, 27%, 94%);
+      color: hsl(220, 16%, 22%);
+    }
+    .p3-light .preview-link { color: hsl(213, 32%, 52%); }
+    .p3-light .preview-button {
+      border-color: hsl(213, 32%, 52%);
+      color: hsl(213, 32%, 52%);
+    }
+    .p3-light .preview-button:hover {
+      background: hsl(213, 32%, 52%);
+      color: hsl(218, 27%, 94%);
+    }
+
+    /* Palette 4: Warmer Tones */
+    .p4-dark {
+      background: hsl(25, 10%, 11%);
+      color: hsl(30, 15%, 92%);
+    }
+    .p4-dark .preview-link { color: hsl(200, 90%, 68%); }
+    .p4-dark .preview-button {
+      border-color: hsl(200, 90%, 68%);
+      color: hsl(200, 90%, 68%);
+    }
+    .p4-dark .preview-button:hover {
+      background: hsl(200, 90%, 68%);
+      color: hsl(25, 10%, 11%);
+    }
+
+    .p4-light {
+      background: hsl(30, 25%, 97%);
+      color: hsl(25, 20%, 15%);
+    }
+    .p4-light .preview-link { color: hsl(200, 85%, 50%); }
+    .p4-light .preview-button {
+      border-color: hsl(200, 85%, 50%);
+      color: hsl(200, 85%, 50%);
+    }
+    .p4-light .preview-button:hover {
+      background: hsl(200, 85%, 50%);
+      color: hsl(30, 25%, 97%);
+    }
+
+    /* Palette 5: High Contrast */
+    .p5-dark {
+      background: hsl(0, 0%, 6%);
+      color: hsl(0, 0%, 98%);
+    }
+    .p5-dark .preview-link { color: hsl(215, 100%, 75%); }
+    .p5-dark .preview-button {
+      border-color: hsl(215, 100%, 75%);
+      color: hsl(215, 100%, 75%);
+    }
+    .p5-dark .preview-button:hover {
+      background: hsl(215, 100%, 75%);
+      color: hsl(0, 0%, 6%);
+    }
+
+    .p5-light {
+      background: hsl(0, 0%, 100%);
+      color: hsl(0, 0%, 8%);
+    }
+    .p5-light .preview-link { color: hsl(215, 100%, 45%); }
+    .p5-light .preview-button {
+      border-color: hsl(215, 100%, 45%);
+      color: hsl(215, 100%, 45%);
+    }
+    .p5-light .preview-button:hover {
+      background: hsl(215, 100%, 45%);
+      color: hsl(0, 0%, 100%);
+    }
+
+    /* Palette 6: Tokyonight-inspired */
+    .p6-dark {
+      background: hsl(235, 15%, 12%);
+      color: hsl(220, 15%, 85%);
+    }
+    .p6-dark .preview-link { color: hsl(215, 85%, 65%); }
+    .p6-dark .preview-button {
+      border-color: hsl(215, 85%, 65%);
+      color: hsl(215, 85%, 65%);
+    }
+    .p6-dark .preview-button:hover {
+      background: hsl(215, 85%, 65%);
+      color: hsl(235, 15%, 12%);
+    }
+
+    .p6-light {
+      background: hsl(235, 30%, 96%);
+      color: hsl(235, 20%, 20%);
+    }
+    .p6-light .preview-link { color: hsl(215, 75%, 50%); }
+    .p6-light .preview-button {
+      border-color: hsl(215, 75%, 50%);
+      color: hsl(215, 75%, 50%);
+    }
+    .p6-light .preview-button:hover {
+      background: hsl(215, 75%, 50%);
+      color: hsl(235, 30%, 96%);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Portfolio Color Palette Options</h1>
+
+  <div class="intro">
+    <p>Aquí tienes 6 opciones de paletas de colores. Cada una muestra cómo se verían el tema oscuro y claro en tu portfolio. Elige la que más te guste y te diré cuál aplicar.</p>
+  </div>
+
+  <div class="palettes-container">
+    <!-- Palette 1: Original Carbonfox -->
+    <div class="palette-card">
+      <div class="palette-header">
+        <h2 class="palette-name">1. Original Carbonfox</h2>
+        <p class="palette-description">
+          La paleta original de Carbonfox con fondos muy oscuros (#161616) y azules brillantes.
+          Máximo contraste y fiel al tema original de nightfox.nvim.
+        </p>
+      </div>
+      <div class="theme-modes">
+        <div class="theme-preview p1-dark">
+          <div class="mode-label">Dark Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(0, 0%, 9%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(220, 25%, 96%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 100%, 74%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-preview p1-light">
+          <div class="mode-label">Light Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 25%, 97%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(0, 0%, 12%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 85%, 60%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 2: Softer Carbonfox -->
+    <div class="palette-card">
+      <div class="palette-header">
+        <h2 class="palette-name">2. Carbonfox Suave</h2>
+        <p class="palette-description">
+          Versión más suave con menos contraste. Fondos ligeramente más claros y azules menos saturados.
+          Más agradable para sesiones largas de lectura.
+        </p>
+      </div>
+      <div class="theme-modes">
+        <div class="theme-preview p2-dark">
+          <div class="mode-label">Dark Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 15%, 12%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 20%, 92%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 90%, 70%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-preview p2-light">
+          <div class="mode-label">Light Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 25%, 98%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 20%, 18%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 80%, 55%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 3: Nord-inspired -->
+    <div class="palette-card">
+      <div class="palette-header">
+        <h2 class="palette-name">3. Nord-inspired</h2>
+        <p class="palette-description">
+          Inspirada en Nord theme. Tonos azules fríos, menos saturados. Look minimalista y profesional.
+          Esta es la paleta que tenías antes de los cambios.
+        </p>
+      </div>
+      <div class="theme-modes">
+        <div class="theme-preview p3-dark">
+          <div class="mode-label">Dark Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(220, 16%, 14%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(218, 27%, 94%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(210, 34%, 63%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-preview p3-light">
+          <div class="mode-label">Light Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(218, 27%, 94%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(220, 16%, 22%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(213, 32%, 52%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 4: Warmer -->
+    <div class="palette-card">
+      <div class="palette-header">
+        <h2 class="palette-name">4. Tonos Cálidos</h2>
+        <p class="palette-description">
+          Paleta con base cálida (marrones oscuros) y azul cyan como acento.
+          Menos frío que las opciones anteriores, más acogedor.
+        </p>
+      </div>
+      <div class="theme-modes">
+        <div class="theme-preview p4-dark">
+          <div class="mode-label">Dark Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(25, 10%, 11%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(30, 15%, 92%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(200, 90%, 68%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-preview p4-light">
+          <div class="mode-label">Light Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(30, 25%, 97%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(25, 20%, 15%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(200, 85%, 50%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 5: High Contrast -->
+    <div class="palette-card">
+      <div class="palette-header">
+        <h2 class="palette-name">5. Alto Contraste</h2>
+        <p class="palette-description">
+          Máximo contraste para mejor legibilidad. Negro puro y blanco puro con azul brillante.
+          Óptimo para accesibilidad (WCAG AAA).
+        </p>
+      </div>
+      <div class="theme-modes">
+        <div class="theme-preview p5-dark">
+          <div class="mode-label">Dark Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(0, 0%, 6%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(0, 0%, 98%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 100%, 75%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-preview p5-light">
+          <div class="mode-label">Light Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(0, 0%, 100%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(0, 0%, 8%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 100%, 45%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 6: Tokyonight -->
+    <div class="palette-card">
+      <div class="palette-header">
+        <h2 class="palette-name">6. Tokyonight-inspired</h2>
+        <p class="palette-description">
+          Inspirada en Tokyonight. Tonos púrpuras oscuros con azules saturados.
+          Look moderno y vibrante con un toque de misticismo.
+        </p>
+      </div>
+      <div class="theme-modes">
+        <div class="theme-preview p6-dark">
+          <div class="mode-label">Dark Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(235, 15%, 12%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(220, 15%, 85%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 85%, 65%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-preview p6-light">
+          <div class="mode-label">Light Mode</div>
+          <div class="preview-section">
+            <h3 class="preview-title">Abián Izquierdo</h3>
+            <p class="preview-subtitle">I build things for the web</p>
+            <p class="preview-text">
+              I'm a web developer specialized in frontend. Currently working at the
+              <a href="#" class="preview-link">regional blood bank</a>.
+            </p>
+            <button class="preview-button">Get in touch!</button>
+            <button class="preview-button">Download resume</button>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(235, 30%, 96%)"></div>
+              <div class="swatch-label">Background</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(235, 20%, 20%)"></div>
+              <div class="swatch-label">Text</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background: hsl(215, 75%, 50%)"></div>
+              <div class="swatch-label">Primary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem; padding: 2rem; color: #888;">
+    <p>Una vez elijas tu favorita, solo dime el número (1-6) y la aplicaré a tu portfolio.</p>
+  </div>
+</body>
+</html>
