@@ -273,12 +273,12 @@ a:not([class]):focus-visible {
   background: transparent;
   border: 0;
   cursor: pointer;
-  color: var(--clr-neutral-900);
+  color: var(--clr-primary-500);
 }
 
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-  color: var(--clr-primary-500);
+  color: var(--clr-primary-hover);
 }
 
 .theme-toggle .icon-sun,
@@ -364,7 +364,7 @@ a:not([class]):focus-visible {
   background: transparent;
   border: 0;
   cursor: pointer;
-  color: var(--clr-neutral-900);
+  color: var(--clr-primary-500);
   padding: 0.5rem;
   min-height: var(--touch-target-min);
   min-width: var(--touch-target-min);
@@ -378,7 +378,7 @@ a:not([class]):focus-visible {
 .nav-close:hover,
 .nav-close:focus-visible {
   background-color: var(--clr-neutral-400);
-  color: var(--clr-primary-500);
+  color: var(--clr-primary-hover);
 }
 
 .primary-navigation {
@@ -433,14 +433,14 @@ a:not([class]):focus-visible {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  transition: background-color 200ms ease;
-  color: var(--clr-neutral-900);
+  transition: background-color 200ms ease, color 200ms ease;
+  color: var(--clr-primary-500);
 }
 
 .mobile-nav-toggle:hover,
 .mobile-nav-toggle:focus-visible {
   background-color: var(--clr-neutral-400);
-  color: var(--clr-primary-500);
+  color: var(--clr-primary-hover);
 }
 
 .mobile-nav-toggle:active {
