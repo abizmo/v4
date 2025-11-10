@@ -41,6 +41,16 @@
     />
     <title>Abián Izquierdo</title>
     <link rel="stylesheet" href="index.css" />
+
+    <!-- Inline script to prevent theme flash -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
     <script src="index.js" defer></script>
   </head>
   <body>
@@ -73,6 +83,16 @@
                   rel="noreferrer noopener"
                   >Download resume</a
                 >
+              </li>
+              <li>
+                <button
+                  class="theme-toggle"
+                  aria-label="Toggle theme"
+                  title="Toggle dark/light theme"
+                >
+                  <i class="fa-solid fa-sun fa-xl icon-sun" aria-hidden="true"></i>
+                  <i class="fa-solid fa-moon fa-xl icon-moon" aria-hidden="true"></i>
+                </button>
               </li>
             </ul>
           </nav>

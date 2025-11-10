@@ -1,17 +1,5 @@
 :root {
-  --clr-neutral-907: hsl(220, 16%, 22%, 0.7);
-  --clr-neutral-900: hsl(220, 16%, 22%);
-  --clr-neutral-800: hsl(220, 16%, 28%);
-  --clr-neutral-700: hsl(220, 17%, 32%);
-  --clr-neutral-600: hsl(220, 16%, 36%);
-  --clr-neutral-400: hsl(219, 28%, 88%);
-  --clr-neutral-309: hsl(218, 27%, 92%, 0.9);
-  --clr-neutral-300: hsl(218, 27%, 92%);
-  --clr-neutral-200: hsl(218, 27%, 94%);
-
-  --clr-primary-500: hsl(213, 32%, 52%);
-  --clr-primary-400: hsl(210, 34%, 63%);
-
+  /* Typography */
   --ff-primary: 'Roboto Mono', sans-serif;
 
   --ff-body: var(--ff-primary);
@@ -19,6 +7,40 @@
 
   --fw-regular: 400;
   --fw-bold: 700;
+
+  /* Light Theme Colors (default) - High Contrast (Palette 5) */
+  --clr-bg-primary: hsl(0, 0%, 100%);
+  --clr-bg-secondary: hsl(0, 0%, 98%);
+  --clr-bg-tertiary: hsl(0, 0%, 95%);
+  --clr-bg-elevated: hsl(0, 0%, 100%);
+
+  --clr-fg-primary: hsl(0, 0%, 8%);
+  --clr-fg-secondary: hsl(0, 0%, 20%);
+  --clr-fg-tertiary: hsl(0, 0%, 40%);
+
+  --clr-primary: hsl(215, 100%, 45%);
+  --clr-primary-hover: hsl(215, 100%, 35%);
+
+  --clr-accent-cyan: hsl(200, 100%, 40%);
+  --clr-accent-pink: hsl(335, 100%, 50%);
+  --clr-accent-green: hsl(145, 80%, 35%);
+
+  --clr-shadow: hsl(0, 0%, 0%, 0.15);
+  --clr-shadow-strong: hsl(0, 0%, 0%, 0.5);
+
+  /* Semantic color assignments */
+  --clr-neutral-907: var(--clr-shadow-strong);
+  --clr-neutral-900: var(--clr-fg-primary);
+  --clr-neutral-800: var(--clr-fg-secondary);
+  --clr-neutral-700: var(--clr-fg-secondary);
+  --clr-neutral-600: var(--clr-fg-tertiary);
+  --clr-neutral-400: var(--clr-bg-tertiary);
+  --clr-neutral-309: hsla(0, 0%, 95%, 0.9);
+  --clr-neutral-300: var(--clr-bg-secondary);
+  --clr-neutral-200: var(--clr-bg-primary);
+
+  --clr-primary-500: var(--clr-primary);
+  --clr-primary-400: var(--clr-primary-hover);
 
   --fs-200: 13px;
   --fs-300: 14px;
@@ -52,6 +74,60 @@
   --sizes-16: 7rem;
 
   --z-index-top: 9;
+
+  /* Theme transition */
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+/* Dark Theme - High Contrast (Palette 5) */
+[data-theme="dark"] {
+  --clr-bg-primary: hsl(0, 0%, 6%);
+  --clr-bg-secondary: hsl(0, 0%, 10%);
+  --clr-bg-tertiary: hsl(0, 0%, 14%);
+  --clr-bg-elevated: hsl(0, 0%, 8%);
+
+  --clr-fg-primary: hsl(0, 0%, 98%);
+  --clr-fg-secondary: hsl(0, 0%, 88%);
+  --clr-fg-tertiary: hsl(0, 0%, 70%);
+
+  --clr-primary: hsl(215, 100%, 75%);
+  --clr-primary-hover: hsl(215, 100%, 85%);
+
+  --clr-accent-cyan: hsl(200, 100%, 65%);
+  --clr-accent-pink: hsl(335, 100%, 75%);
+  --clr-accent-green: hsl(145, 80%, 60%);
+
+  --clr-shadow: hsl(0, 0%, 0%, 0.4);
+  --clr-shadow-strong: hsl(0, 0%, 0%, 0.8);
+
+  /* Update semantic colors for dark theme */
+  --clr-neutral-309: hsla(0, 0%, 14%, 0.9);
+}
+
+/* Respect user's OS preference if no theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --clr-bg-primary: hsl(0, 0%, 6%);
+    --clr-bg-secondary: hsl(0, 0%, 10%);
+    --clr-bg-tertiary: hsl(0, 0%, 14%);
+    --clr-bg-elevated: hsl(0, 0%, 8%);
+
+    --clr-fg-primary: hsl(0, 0%, 98%);
+    --clr-fg-secondary: hsl(0, 0%, 88%);
+    --clr-fg-tertiary: hsl(0, 0%, 70%);
+
+    --clr-primary: hsl(215, 100%, 75%);
+    --clr-primary-hover: hsl(215, 100%, 85%);
+
+    --clr-accent-cyan: hsl(200, 100%, 65%);
+    --clr-accent-pink: hsl(335, 100%, 75%);
+    --clr-accent-green: hsl(145, 80%, 60%);
+
+    --clr-shadow: hsl(0, 0%, 0%, 0.4);
+    --clr-shadow-strong: hsl(0, 0%, 0%, 0.8);
+
+    --clr-neutral-309: hsla(0, 0%, 14%, 0.9);
+  }
 }
 
 @media (min-width: 50em) {
@@ -172,6 +248,61 @@ a:not([class]):focus-visible {
   position: absolute;
   inset: 0 0 auto;
   padding-top: var(--sizes-5);
+}
+
+/* theme toggle */
+.theme-toggle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  color: var(--clr-neutral-900);
+  transition: color 150ms ease, transform 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  color: var(--clr-primary-500);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun,
+:root:not([data-theme]) .theme-toggle .icon-sun {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon,
+:root:not([data-theme]) .theme-toggle .icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle .icon-sun {
+    display: none;
+  }
+
+  :root:not([data-theme]) .theme-toggle .icon-moon {
+    display: block;
+  }
 }
 
 .nav-wrapper {
