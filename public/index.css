@@ -8,25 +8,25 @@
   --fw-regular: 400;
   --fw-bold: 700;
 
-  /* Light Theme Colors (default) - Based on Carbonfox */
-  --clr-bg-primary: hsl(215, 25%, 97%);
-  --clr-bg-secondary: hsl(215, 20%, 94%);
-  --clr-bg-tertiary: hsl(215, 15%, 90%);
+  /* Light Theme Colors (default) - High Contrast (Palette 5) */
+  --clr-bg-primary: hsl(0, 0%, 100%);
+  --clr-bg-secondary: hsl(0, 0%, 98%);
+  --clr-bg-tertiary: hsl(0, 0%, 95%);
   --clr-bg-elevated: hsl(0, 0%, 100%);
 
-  --clr-fg-primary: hsl(0, 0%, 12%);
-  --clr-fg-secondary: hsl(0, 0%, 25%);
-  --clr-fg-tertiary: hsl(0, 0%, 45%);
+  --clr-fg-primary: hsl(0, 0%, 8%);
+  --clr-fg-secondary: hsl(0, 0%, 20%);
+  --clr-fg-tertiary: hsl(0, 0%, 40%);
 
-  --clr-primary: hsl(215, 85%, 60%);
-  --clr-primary-hover: hsl(215, 85%, 50%);
+  --clr-primary: hsl(215, 100%, 45%);
+  --clr-primary-hover: hsl(215, 100%, 35%);
 
-  --clr-accent-cyan: hsl(200, 90%, 45%);
-  --clr-accent-pink: hsl(335, 100%, 72%);
-  --clr-accent-green: hsl(145, 65%, 45%);
+  --clr-accent-cyan: hsl(200, 100%, 40%);
+  --clr-accent-pink: hsl(335, 100%, 50%);
+  --clr-accent-green: hsl(145, 80%, 35%);
 
-  --clr-shadow: hsl(220, 16%, 22%, 0.15);
-  --clr-shadow-strong: hsl(220, 16%, 22%, 0.7);
+  --clr-shadow: hsl(0, 0%, 0%, 0.15);
+  --clr-shadow-strong: hsl(0, 0%, 0%, 0.5);
 
   /* Semantic color assignments */
   --clr-neutral-907: var(--clr-shadow-strong);
@@ -35,7 +35,7 @@
   --clr-neutral-700: var(--clr-fg-secondary);
   --clr-neutral-600: var(--clr-fg-tertiary);
   --clr-neutral-400: var(--clr-bg-tertiary);
-  --clr-neutral-309: hsla(215, 15%, 90%, 0.9);
+  --clr-neutral-309: hsla(0, 0%, 95%, 0.9);
   --clr-neutral-300: var(--clr-bg-secondary);
   --clr-neutral-200: var(--clr-bg-primary);
 
@@ -79,54 +79,54 @@
   transition: background-color 300ms ease, color 300ms ease;
 }
 
-/* Dark Theme - Carbonfox colors */
+/* Dark Theme - High Contrast (Palette 5) */
 [data-theme="dark"] {
-  --clr-bg-primary: hsl(0, 0%, 9%);
-  --clr-bg-secondary: hsl(0, 0%, 14%);
-  --clr-bg-tertiary: hsl(0, 0%, 18%);
-  --clr-bg-elevated: hsl(0, 0%, 16%);
+  --clr-bg-primary: hsl(0, 0%, 6%);
+  --clr-bg-secondary: hsl(0, 0%, 10%);
+  --clr-bg-tertiary: hsl(0, 0%, 14%);
+  --clr-bg-elevated: hsl(0, 0%, 8%);
 
-  --clr-fg-primary: hsl(220, 25%, 96%);
-  --clr-fg-secondary: hsl(220, 10%, 87%);
-  --clr-fg-tertiary: hsl(220, 10%, 70%);
+  --clr-fg-primary: hsl(0, 0%, 98%);
+  --clr-fg-secondary: hsl(0, 0%, 88%);
+  --clr-fg-tertiary: hsl(0, 0%, 70%);
 
-  --clr-primary: hsl(215, 100%, 74%);
-  --clr-primary-hover: hsl(215, 100%, 80%);
+  --clr-primary: hsl(215, 100%, 75%);
+  --clr-primary-hover: hsl(215, 100%, 85%);
 
-  --clr-accent-cyan: hsl(200, 100%, 60%);
-  --clr-accent-pink: hsl(335, 100%, 87%);
-  --clr-accent-green: hsl(145, 65%, 55%);
+  --clr-accent-cyan: hsl(200, 100%, 65%);
+  --clr-accent-pink: hsl(335, 100%, 75%);
+  --clr-accent-green: hsl(145, 80%, 60%);
 
-  --clr-shadow: hsl(0, 0%, 0%, 0.3);
-  --clr-shadow-strong: hsl(0, 0%, 0%, 0.7);
+  --clr-shadow: hsl(0, 0%, 0%, 0.4);
+  --clr-shadow-strong: hsl(0, 0%, 0%, 0.8);
 
   /* Update semantic colors for dark theme */
-  --clr-neutral-309: hsla(0, 0%, 18%, 0.9);
+  --clr-neutral-309: hsla(0, 0%, 14%, 0.9);
 }
 
 /* Respect user's OS preference if no theme is set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --clr-bg-primary: hsl(0, 0%, 9%);
-    --clr-bg-secondary: hsl(0, 0%, 14%);
-    --clr-bg-tertiary: hsl(0, 0%, 18%);
-    --clr-bg-elevated: hsl(0, 0%, 16%);
+    --clr-bg-primary: hsl(0, 0%, 6%);
+    --clr-bg-secondary: hsl(0, 0%, 10%);
+    --clr-bg-tertiary: hsl(0, 0%, 14%);
+    --clr-bg-elevated: hsl(0, 0%, 8%);
 
-    --clr-fg-primary: hsl(220, 25%, 96%);
-    --clr-fg-secondary: hsl(220, 10%, 87%);
-    --clr-fg-tertiary: hsl(220, 10%, 70%);
+    --clr-fg-primary: hsl(0, 0%, 98%);
+    --clr-fg-secondary: hsl(0, 0%, 88%);
+    --clr-fg-tertiary: hsl(0, 0%, 70%);
 
-    --clr-primary: hsl(215, 100%, 74%);
-    --clr-primary-hover: hsl(215, 100%, 80%);
+    --clr-primary: hsl(215, 100%, 75%);
+    --clr-primary-hover: hsl(215, 100%, 85%);
 
-    --clr-accent-cyan: hsl(200, 100%, 60%);
-    --clr-accent-pink: hsl(335, 100%, 87%);
-    --clr-accent-green: hsl(145, 65%, 55%);
+    --clr-accent-cyan: hsl(200, 100%, 65%);
+    --clr-accent-pink: hsl(335, 100%, 75%);
+    --clr-accent-green: hsl(145, 80%, 60%);
 
-    --clr-shadow: hsl(0, 0%, 0%, 0.3);
-    --clr-shadow-strong: hsl(0, 0%, 0%, 0.7);
+    --clr-shadow: hsl(0, 0%, 0%, 0.4);
+    --clr-shadow-strong: hsl(0, 0%, 0%, 0.8);
 
-    --clr-neutral-309: hsla(0, 0%, 18%, 0.9);
+    --clr-neutral-309: hsla(0, 0%, 14%, 0.9);
   }
 }
 
