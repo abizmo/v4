@@ -1,22 +1,59 @@
 const primaryHeader = document.querySelector('.primary-header');
 const navToggle = document.querySelector('.mobile-nav-toggle');
+const navClose = document.querySelector('.nav-close');
 const primaryNavigation = document.querySelector('.primary-navigation');
+const navLinks = document.querySelectorAll('.primary-navigation a');
 
+function openMenu() {
+  navToggle.setAttribute('aria-expanded', 'true');
+  primaryNavigation.setAttribute('data-visible', '');
+  primaryHeader.setAttribute('data-overlay', '');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeMenu() {
+  navToggle.setAttribute('aria-expanded', 'false');
+  primaryNavigation.removeAttribute('data-visible');
+  primaryHeader.removeAttribute('data-overlay');
+  document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Open menu on hamburger click
 navToggle.addEventListener('click', (evt) => {
   evt.stopPropagation();
-  primaryNavigation.hasAttribute('data-visible')
-    ? navToggle.setAttribute('aria-expanded', 'false')
-    : navToggle.setAttribute('aria-expanded', 'true');
-  primaryNavigation.toggleAttribute('data-visible');
-  primaryHeader.toggleAttribute('data-overlay');
+  if (primaryNavigation.hasAttribute('data-visible')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
 
-document.addEventListener('click', () => {
-  if (primaryNavigation.hasAttribute('data-visible')) {
-    navToggle.setAttribute('aria-expanded', 'false');
-    primaryNavigation.removeAttribute('data-visible');
-    primaryHeader.removeAttribute('data-overlay');
+// Close menu on close button click
+navClose.addEventListener('click', () => {
+  closeMenu();
+});
+
+// Close menu on overlay click
+primaryHeader.addEventListener('click', (evt) => {
+  if (evt.target === primaryHeader && primaryNavigation.hasAttribute('data-visible')) {
+    closeMenu();
   }
+});
+
+// Close menu when clicking outside (on overlay)
+document.addEventListener('click', (evt) => {
+  if (primaryNavigation.hasAttribute('data-visible') &&
+      !primaryNavigation.contains(evt.target) &&
+      !navToggle.contains(evt.target)) {
+    closeMenu();
+  }
+});
+
+// Close menu when clicking on navigation links
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    closeMenu();
+  });
 });
 
 // Theme toggle functionality

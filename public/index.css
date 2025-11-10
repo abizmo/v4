@@ -321,26 +321,27 @@ a:not([class]):focus-visible {
 
 .nav-list {
   font-size: var(--fs-400);
-  display: grid;
-  place-content: center;
-  text-align: center;
-  gap: var(--sizes-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sizes-2);
+  margin-top: var(--sizes-8);
 }
 
 .nav-list li {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .nav-list a,
 .nav-list button {
+  width: 100%;
   min-height: var(--touch-target-min);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1rem;
+  justify-content: flex-start;
+  padding: 0.875rem 1rem;
   border-radius: 6px;
   transition: background-color 200ms ease, color 200ms ease;
+  text-align: left;
 }
 
 .nav-list a:hover,
@@ -350,29 +351,73 @@ a:not([class]):focus-visible {
   background-color: var(--clr-neutral-400);
 }
 
+.nav-list .button {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Close button in mobile nav */
+.nav-close {
+  position: absolute;
+  top: var(--sizes-5);
+  right: var(--sizes-5);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--clr-neutral-900);
+  padding: 0.5rem;
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.nav-close:hover,
+.nav-close:focus-visible {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-primary-500);
+}
+
 .primary-navigation {
   display: none;
 
   position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(75vw, 400px);
+  height: 100vh;
   padding: var(--sizes-8) var(--sizes-6);
-  inset: 5rem var(--sizes-4) auto;
-  max-width: 90vw;
-  margin-left: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px var(--clr-shadow-strong);
   background: var(--clr-bg-elevated);
-  backdrop-filter: blur(10px);
+  box-shadow: -4px 0 24px var(--clr-shadow-strong);
+  transition: right 300ms ease-in-out;
+  z-index: calc(var(--z-index-top) + 1);
+  overflow-y: auto;
 }
 
 .primary-navigation[data-visible] {
   display: block;
+  right: 0;
 }
 
 .primary-header[data-overlay]::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  background: rgba(0, 0, 0, 0.6);
+  z-index: var(--z-index-top);
+  animation: fadeIn 300ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .mobile-nav-toggle {
@@ -427,17 +472,44 @@ a:not([class]):focus-visible {
     display: none;
   }
 
+  .nav-close {
+    display: none;
+  }
+
   .nav-list {
+    flex-direction: row;
     align-items: center;
-    display: flex;
+    gap: var(--sizes-5);
+    margin-top: 0;
+  }
+
+  .nav-list li {
+    width: auto;
+  }
+
+  .nav-list a,
+  .nav-list button {
+    width: auto;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .nav-list .button {
+    padding: var(--button-padding-mobile);
   }
 
   .primary-navigation {
-    display: block;
-    position: initial;
+    display: block !important;
+    position: static;
+    right: auto;
+    width: auto;
+    height: auto;
     padding: 0;
-    max-width: initial;
+    background: transparent;
     box-shadow: none;
+    transition: none;
+    overflow-y: visible;
   }
 }
 
