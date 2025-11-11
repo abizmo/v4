@@ -455,8 +455,6 @@ a:not([class]):focus-visible {
 }
 
 .primary-navigation {
-  display: none;
-
   position: fixed;
   top: 0;
   right: 0;
@@ -471,11 +469,12 @@ a:not([class]):focus-visible {
   overflow-y: auto;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  visibility: hidden;
 }
 
 .primary-navigation[data-visible] {
-  display: block;
   transform: translateX(0);
+  visibility: visible;
 }
 
 .primary-header[data-overlay]::before {
@@ -648,6 +647,8 @@ a:not([class]):focus-visible {
     box-shadow: none;
     transition: none;
     overflow-y: visible;
+    transform: none;
+    visibility: visible;
   }
 }
 
