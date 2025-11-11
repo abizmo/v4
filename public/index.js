@@ -94,3 +94,30 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     setTheme(e.matches ? 'dark' : 'light');
   }
 });
+
+// Scroll animations with Intersection Observer
+// Only initialize if user doesn't prefer reduced motion
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!prefersReducedMotion) {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const animateOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        // Unobserve after animation to improve performance
+        animateOnScroll.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with animation classes
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-fade');
+    animatedElements.forEach(el => animateOnScroll.observe(el));
+  });
+}

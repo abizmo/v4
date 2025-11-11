@@ -28,6 +28,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="index.css" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" as="style" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
       rel="stylesheet"
@@ -137,8 +142,8 @@
       </section>
       <section id="about" class="content">
         <div class="container">
-          <h3 class="capitalize fs-700 fw-bold lh-heading">About me</h3>
-          <div class="about">
+          <h3 class="capitalize fs-700 fw-bold lh-heading animate-on-scroll">About me</h3>
+          <div class="about animate-on-scroll">
             <div class="grid gap-4">
               <p>
                 Hello! I'm Abián, a front-end developer based in
@@ -172,20 +177,20 @@
               </ul>
             </div>
             <div class="about-media">
-              <img src="./images/me.webp" alt="Abián Izquierdo" loading="lazy" />
+              <img src="./images/me.webp" alt="Abián Izquierdo" loading="lazy" decoding="async" fetchpriority="high" />
             </div>
           </div>
         </div>
       </section>
       <section id="works" class="content">
         <div class="container">
-          <h3 class="capitalize fs-700 fw-bold lh-heading align-end">
+          <h3 class="capitalize fs-700 fw-bold lh-heading align-end animate-on-scroll">
             Some works of mine
           </h3>
           <div class="grid gap-10 justify-items-center">
-            <article class="project">
+            <article class="project animate-on-scroll">
               <div class="project--media">
-                <img src="./images/job-listings.webp" alt="job listings" loading="lazy" />
+                <img src="./images/job-listings.webp" alt="job listings" loading="lazy" decoding="async" />
               </div>
               <div class="project--body grid">
                 <h4 class="capitalize fs-600 fw-bold lh-heading">
@@ -225,12 +230,13 @@
                 </ul>
               </div>
             </article>
-            <article class="project">
+            <article class="project animate-on-scroll">
               <div class="project--media">
                 <img
                   src="./images/interactive-comments.webp"
                   alt="interactive comments"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="project--body grid">
@@ -268,12 +274,13 @@
                 </ul>
               </div>
             </article>
-            <article class="project">
+            <article class="project animate-on-scroll">
               <div class="project--media">
                 <img
                   src="./images/social-media-dashboard.webp"
                   alt="social media dashboard"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="project--body grid">
@@ -311,12 +318,13 @@
                 </ul>
               </div>
             </article>
-            <article class="project">
+            <article class="project animate-on-scroll">
               <div class="project--media">
                 <img
                   src="./images/fylo-landing-page.webp"
                   alt="Fylo landing page"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="project--body grid">
@@ -363,7 +371,7 @@
         </div>
       </section>
       <section id="contact" class="content">
-        <div class="container contact-container grid gap-8">
+        <div class="container contact-container grid gap-8 animate-on-scroll">
           <div class="grid gap-5">
             <h4 class="fs-500 lh-heading">What's next?</h4>
             <h2 class="fs-800 fw-bold">Get In Touch!</h2>
