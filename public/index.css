@@ -666,8 +666,22 @@ a:not([class]):focus-visible {
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-container {
     min-height: auto;
-    padding-top: 6rem;
+    padding-top: 8rem; /* Increased from 6rem to give more space */
     padding-bottom: 3rem;
+  }
+
+  /* Reduce header padding to minimize overlap */
+  .primary-header {
+    padding-top: var(--sizes-3);
+  }
+
+  /* Reduce font sizes in landscape to fit better */
+  .hero-container .fs-900 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .hero-container .fs-800 {
+    font-size: clamp(1.25rem, 4vw, 2rem);
   }
 }
 
