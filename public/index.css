@@ -656,7 +656,19 @@ a:not([class]):focus-visible {
 .hero-container {
   align-content: center;
   justify-items: start;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for better mobile support */
+  padding-top: max(5rem, 10vh); /* Ensure space for header, especially in landscape */
+  padding-bottom: 2rem;
+}
+
+/* Adjust hero for landscape orientation on small screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-container {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
 }
 
 .intro {
