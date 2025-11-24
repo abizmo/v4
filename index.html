@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Abián Izquierdo - Front-end developer specialized in React, TypeScript, and modern web technologies. Based in Las Palmas de Gran Canaria, Spain." />
-    <meta name="keywords" content="frontend developer, web developer, React, TypeScript, JavaScript, NextJs, portfolio, Las Palmas, Gran Canaria" />
+    <meta
+      name="description"
+      content="Abián Izquierdo - Front-end developer specialized in React, TypeScript, and modern web technologies. Based in Las Palmas de Gran Canaria, Spain."
+    />
+    <meta
+      name="keywords"
+      content="frontend developer, web developer, React, TypeScript, JavaScript, NextJs, portfolio, Las Palmas, Gran Canaria"
+    />
     <meta name="author" content="Abián Izquierdo" />
     <meta name="theme-color" content="#3b82f6" />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Abián Izquierdo - Frontend Developer" />
-    <meta property="og:description" content="Front-end developer specialized in React, TypeScript, and modern web technologies. Building accessible and inclusive interfaces." />
+    <meta
+      property="og:description"
+      content="Front-end developer specialized in React, TypeScript, and modern web technologies. Building accessible and inclusive interfaces."
+    />
     <meta property="og:url" content="https://abizmo.dev" />
     <meta property="og:site_name" content="Abián Izquierdo Portfolio" />
     <meta property="og:locale" content="en_US" />
@@ -24,14 +33,21 @@
     <meta name="twitter:site" content="@abizmo" />
     <meta name="twitter:creator" content="@abizmo" />
     <meta name="twitter:title" content="Abián Izquierdo - Frontend Developer" />
-    <meta name="twitter:description" content="Front-end developer specialized in React, TypeScript, and modern web technologies." />
+    <meta
+      name="twitter:description"
+      content="Front-end developer specialized in React, TypeScript, and modern web technologies."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Preload critical resources -->
     <link rel="preload" href="index.css" as="style" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      as="style"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
@@ -49,8 +65,9 @@
 
     <!-- Inline script to prevent theme flash -->
     <script>
-      (function() {
-        const theme = localStorage.getItem('theme') ||
+      (function () {
+        const theme =
+          localStorage.getItem('theme') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', theme);
       })();
@@ -69,18 +86,11 @@
             aria-expanded="false"
           >
             <i class="fa-solid fa-bars fa-xl icon-menu" aria-hidden="true"></i>
-            <i
-              class="fa-solid fa-xmark fa-xl icon-close"
-              aria-hidden="true"
-            ></i>
+            <i class="fa-solid fa-xmark fa-xl icon-close" aria-hidden="true"></i>
             <span class="visually-hidden">Menu</span>
           </button>
           <nav class="primary-navigation" id="primary-navigation">
-            <button
-              class="nav-close"
-              aria-label="Close menu"
-              title="Close menu"
-            >
+            <button class="nav-close" aria-label="Close menu" title="Close menu">
               <i class="fa-solid fa-xmark fa-2x" aria-hidden="true"></i>
             </button>
             <ul aria-label="Primary" role="list" class="nav-list">
@@ -121,21 +131,14 @@
               <p class="block fs-800 fw-bold">I build things for the web.</p>
             </div>
             <p class="intro">
-              I'm a web developer specialized in frontend (and occasionally
-              backend). Currently, I'm working at the
-              <a
-                href="https://efectodonacion.com/"
-                target="_blank"
-                rel="noreferrer noopener"
+              I'm a web developer specialized in frontend (and occasionally backend). Currently, I'm
+              working at the
+              <a href="https://efectodonacion.com/" target="_blank" rel="noreferrer noopener"
                 >regional blood bank</a
               >, as part of the IT department.
             </p>
           </div>
-          <a
-            href="mailto:abizmo@gmail.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="button"
+          <a href="mailto:abizmo@gmail.com" target="_blank" rel="noreferrer noopener" class="button"
             >Get in touch!</a
           >
         </div>
@@ -152,20 +155,18 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   >Las Palmas de Gran Canaria</a
-                >, Spain. I enjoy to work on exciting projects that test what
-                I’ve learnt.
+                >, Spain. I enjoy to work on exciting projects that test what I’ve learnt.
               </p>
               <p>
-                My interest in web development started back in 2014 when a
-                friend asked me for a web app for his company. Since then, I have
-                developed several useful tools for the company I'm working at.
+                My interest in web development started back in 2014 when a friend asked me for a web
+                app for his company. Since then, I have developed several useful tools for the
+                company I'm working at.
               </p>
               <p>
-                I'm always looking for new challenges that can teach me new
-                things or test my knowledges, but my main focus these days is to
-                strengthen what I know about accessible and inclusive
-                interfaces. Here are a few technologies I’ve been working with
-                recently:
+                I'm always looking for new challenges that can teach me new things or test my
+                knowledges, but my main focus these days is to strengthen what I know about
+                accessible and inclusive interfaces. Here are a few technologies I’ve been working
+                with recently:
               </p>
               <ul role="list" class="technologies">
                 <li>JavaScript</li>
@@ -177,7 +178,13 @@
               </ul>
             </div>
             <div class="about-media">
-              <img src="./images/me.webp" alt="Abián Izquierdo" loading="lazy" decoding="async" fetchpriority="high" />
+              <img
+                src="./images/me.webp"
+                alt="Abián Izquierdo"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="high"
+              />
             </div>
           </div>
         </div>
@@ -190,18 +197,21 @@
           <div class="grid gap-10 justify-items-center">
             <article class="project animate-on-scroll">
               <div class="project--media">
-                <img src="./images/job-listings.webp" alt="job listings" loading="lazy" decoding="async" />
+                <img
+                  src="./images/job-listings.webp"
+                  alt="job listings"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="project--body grid">
                 <h4 class="capitalize fs-600 fw-bold lh-heading">
                   Job listings with filtering solution
                 </h4>
                 <p class="project--description">
-                  A job listing made with create-react-app. This list can be
-                  filtered using tags. For this challenge I decided to use
-                  TypeScript and styled-components. For the first time I
-                  tried Storybook and used it to test some visual
-                  components.
+                  A job listing made with create-react-app. This list can be filtered using tags.
+                  For this challenge I decided to use TypeScript and styled-components. For the
+                  first time I tried Storybook and used it to test some visual components.
                 </p>
                 <ul class="project--tools" role="list">
                   <li>ReactJs</li>
@@ -240,14 +250,11 @@
                 />
               </div>
               <div class="project--body grid">
-                <h4 class="capitalize fs-600 fw-bold lh-heading">
-                  Interactive comments section
-                </h4>
+                <h4 class="capitalize fs-600 fw-bold lh-heading">Interactive comments section</h4>
                 <p class="project--description">
-                  This challenge show a prototype for a comments section, in
-                  which you can add new comments, delete or edit. Also you can
-                  vote or answer other users comments. It is developed with
-                  ReactJS and styled-components.
+                  This challenge show a prototype for a comments section, in which you can add new
+                  comments, delete or edit. Also you can vote or answer other users comments. It is
+                  developed with ReactJS and styled-components.
                 </p>
                 <ul class="project--tools" role="list">
                   <li>React</li>
@@ -284,13 +291,11 @@
                 />
               </div>
               <div class="project--body grid">
-                <h4 class="capitalize fs-600 fw-bold lh-heading">
-                  Social Media Dashboard
-                </h4>
+                <h4 class="capitalize fs-600 fw-bold lh-heading">Social Media Dashboard</h4>
                 <p class="project--description">
-                  A dashboard that shows your social media stats. This dashboard
-                  is responsive and it has two theme modes (Light and Dark). It
-                  was developed with React and CSS modules.
+                  A dashboard that shows your social media stats. This dashboard is responsive and
+                  it has two theme modes (Light and Dark). It was developed with React and CSS
+                  modules.
                 </p>
                 <ul class="project--tools" role="list">
                   <li>React</li>
@@ -328,12 +333,10 @@
                 />
               </div>
               <div class="project--body grid">
-                <h4 class="capitalize fs-600 fw-bold lh-heading">
-                  Fylo landing page
-                </h4>
+                <h4 class="capitalize fs-600 fw-bold lh-heading">Fylo landing page</h4>
                 <p class="project--description">
-                  A landing page for a tech startup. It is responsive and light.
-                  It was developed with HTML and SCSS.
+                  A landing page for a tech startup. It is responsive and light. It was developed
+                  with HTML and SCSS.
                 </p>
                 <ul class="project--tools" role="list">
                   <li>HTML</li>
@@ -376,16 +379,12 @@
             <h4 class="fs-500 lh-heading">What's next?</h4>
             <h2 class="fs-800 fw-bold">Get In Touch!</h2>
             <p>
-              Although I’m currently working, my inbox is always open for any
-              new opportunities. Also, if you have a question or just want to
-              say hi, I’ll try my best to get back to you!
+              Although I’m currently working, my inbox is always open for any new opportunities.
+              Also, if you have a question or just want to say hi, I’ll try my best to get back to
+              you!
             </p>
           </div>
-          <a
-            href="mailto:abizmo@gmail.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="button"
+          <a href="mailto:abizmo@gmail.com" target="_blank" rel="noreferrer noopener" class="button"
             >Get in touch!</a
           >
         </div>
@@ -410,10 +409,7 @@
             </a>
           </li>
           <li>
-            <a
-              aria-label="linkedin"
-              href="https://www.linkedin.com/in/abian-izquierdo/"
-            >
+            <a aria-label="linkedin" href="https://www.linkedin.com/in/abian-izquierdo/">
               <i class="fa-brands fa-linkedin fa-xl text-neutral-200"></i>
             </a>
           </li>

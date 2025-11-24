@@ -42,15 +42,17 @@ primaryHeader.addEventListener('click', (evt) => {
 
 // Close menu when clicking outside (on overlay)
 document.addEventListener('click', (evt) => {
-  if (primaryNavigation.hasAttribute('data-visible') &&
-      !primaryNavigation.contains(evt.target) &&
-      !navToggle.contains(evt.target)) {
+  if (
+    primaryNavigation.hasAttribute('data-visible') &&
+    !primaryNavigation.contains(evt.target) &&
+    !navToggle.contains(evt.target)
+  ) {
     closeMenu();
   }
 });
 
 // Close menu when clicking on navigation links
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
   link.addEventListener('click', () => {
     closeMenu();
   });
@@ -102,11 +104,11 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 if (!prefersReducedMotion) {
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
   };
 
   const animateOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-in');
         // Unobserve after animation to improve performance
@@ -118,6 +120,6 @@ if (!prefersReducedMotion) {
   // Observe all elements with animation classes
   document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-fade');
-    animatedElements.forEach(el => animateOnScroll.observe(el));
+    animatedElements.forEach((el) => animateOnScroll.observe(el));
   });
 }
