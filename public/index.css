@@ -739,20 +739,20 @@ h3:after {
   box-shadow: 4px 4px 16px var(--clr-neutral-900);
 }
 
-.technologies {
+.about__technologies {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-inline: var(--sizes-4);
   row-gap: var(--sizes-2);
 }
 
-.technologies li {
+.about__technologies li {
   display: flex;
   gap: 4px;
   align-items: center;
 }
 
-.technologies li:before {
+.about__technologies li:before {
   content: '</>';
   font-size: 8px;
   font-weight: 700;
@@ -768,7 +768,7 @@ h3:after {
     flex: 1;
   }
 
-  .about-media {
+  .about__media {
     display: grid;
     place-content: center;
   }
