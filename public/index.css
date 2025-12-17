@@ -824,6 +824,8 @@ h3:after {
   }
 
   .project--description {
+    position: relative;
+    z-index: 1;
     background-color: var(--clr-neutral-300);
     padding: var(--sizes-5);
     box-shadow: 0 10px 30px -15px var(--clr-neutral-907);
