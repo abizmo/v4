@@ -79,10 +79,16 @@
 
   --z-index-top: 9;
 
+  /* Animation & Transition Tokens */
+  --transition-base: 200ms ease;
+  --transition-medium: 300ms ease;
+  --transition-slow: 400ms ease;
+  --timing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
   /* Theme transition */
   transition:
-    background-color 300ms ease,
-    color 300ms ease;
+    background-color var(--transition-medium),
+    color var(--transition-medium);
 }
 
 /* Dark Theme - High Contrast (Palette 5) */
@@ -347,8 +353,8 @@ a:not([class]):focus-visible {
 .theme-toggle .theme-toggle__icon--sun,
 .theme-toggle .theme-toggle__icon--moon {
   transition:
-    opacity 200ms ease,
-    transform 200ms ease;
+    opacity var(--transition-base),
+    transform var(--transition-base);
 }
 
 [data-theme='dark'] .theme-toggle .theme-toggle__icon--sun {
@@ -406,8 +412,8 @@ a:not([class]):focus-visible {
   padding: 0.875rem 1rem;
   border-radius: 6px;
   transition:
-    background-color 200ms ease,
-    color 200ms ease;
+    background-color var(--transition-base),
+    color var(--transition-base);
   text-align: left;
 }
 
@@ -448,10 +454,10 @@ a:not([class]):focus-visible {
   justify-content: center;
   border-radius: 6px;
   transition:
-    background-color 200ms ease,
-    color 200ms ease,
-    transform 200ms ease;
-  animation: rotateIn 400ms cubic-bezier(0.4, 0, 0.2, 1) backwards;
+    background-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+  animation: rotateIn var(--transition-slow) var(--timing-smooth) backwards;
   animation-delay: 100ms;
 }
 
@@ -483,7 +489,7 @@ a:not([class]):focus-visible {
   background: var(--clr-bg-elevated);
   box-shadow: -4px 0 24px var(--clr-shadow-strong);
   transform: translateX(100%);
-  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-slow) var(--timing-smooth);
   z-index: calc(var(--z-index-top) + 1);
   overflow-y: auto;
   backdrop-filter: blur(10px);
@@ -504,7 +510,7 @@ a:not([class]):focus-visible {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: var(--z-index-top);
-  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn var(--transition-slow) var(--timing-smooth);
 }
 
 @keyframes fadeIn {
@@ -518,7 +524,7 @@ a:not([class]):focus-visible {
 
 /* Animate menu items when drawer opens */
 .primary-header__nav[data-visible] .primary-header__nav-list li {
-  animation: slideInRight 400ms cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  animation: slideInRight var(--transition-slow) var(--timing-smooth) backwards;
 }
 
 .primary-header__nav[data-visible] .primary-header__nav-list li:nth-child(1) {
@@ -565,8 +571,8 @@ a:not([class]):focus-visible {
   justify-content: center;
   border-radius: 6px;
   transition:
-    background-color 200ms ease,
-    color 200ms ease;
+    background-color var(--transition-base),
+    color var(--transition-base);
   color: var(--clr-primary-500);
 }
 
@@ -583,11 +589,11 @@ a:not([class]):focus-visible {
 
 .primary-header__toggle .primary-header__toggle-icon--menu,
 .primary-header__toggle .primary-header__toggle-icon--close {
-  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-base) var(--timing-smooth);
 }
 
-.primary-header__toggle[aria-expanded='true'] .icon-close {
-  animation: popIn 400ms cubic-bezier(0.4, 0, 0.2, 1);
+.primary-header__toggle[aria-expanded='true'] .primary-header__toggle-icon--close {
+  animation: popIn var(--transition-slow) var(--timing-smooth);
 }
 
 @keyframes popIn {
@@ -608,11 +614,11 @@ a:not([class]):focus-visible {
   display: none;
 }
 
-.primary-header__toggle[aria-expanded='true'] .icon-close {
+.primary-header__toggle[aria-expanded='true'] .primary-header__toggle-icon--close {
   display: block;
 }
 
-.primary-header__toggle[aria-expanded='true'] .icon-menu {
+.primary-header__toggle[aria-expanded='true'] .primary-header__toggle-icon--menu {
   display: none;
 }
 
@@ -855,8 +861,8 @@ h3:after {
 .project__links a {
   color: var(--clr-neutral-900);
   transition:
-    color 200ms ease,
-    transform 200ms ease;
+    color var(--transition-base),
+    transform var(--transition-base);
   display: inline-block;
 }
 
@@ -898,8 +904,8 @@ footer {
   justify-content: center;
   border-radius: 6px;
   transition:
-    background-color 200ms ease,
-    transform 200ms ease;
+    background-color var(--transition-base),
+    transform var(--transition-base);
 }
 
 .footer__social-icons a:hover,
