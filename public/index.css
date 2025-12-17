@@ -782,19 +782,19 @@ h3:after {
 }
 
 @media (max-width: 36.5rem) {
-  .project--media {
+  .project__media {
     position: absolute;
     z-index: -1;
     height: 100%;
   }
 
-  .project--media img {
+  .project__media img {
     height: 100%;
     max-width: initial;
   }
 }
 
-.project--body {
+.project__body {
   background-color: var(--clr-neutral-309);
   padding: var(--sizes-6) var(--sizes-4);
   gap: var(--sizes-4);
@@ -815,15 +815,15 @@ h3:after {
     flex: 1;
   }
 
-  .project--media {
+  .project__media {
     display: block;
   }
 
-  .project--body {
+  .project__body {
     background-color: transparent;
   }
 
-  .project--description {
+  .project__description {
     position: relative;
     z-index: 1;
     background-color: var(--clr-neutral-300);
@@ -833,25 +833,25 @@ h3:after {
     border-radius: var(--sizes-1);
   }
 
-  .project:nth-of-type(odd) .project--body {
+  .project:nth-of-type(odd) .project__body {
     justify-items: end;
     text-align: right;
   }
 }
 
-.project--tools {
+.project__tools {
   display: flex;
   gap: var(--sizes-2);
   flex-wrap: wrap;
   font-size: var(--fs-200);
 }
 
-.project--links {
+.project__links {
   display: flex;
   gap: var(--sizes-5);
 }
 
-.project--links a {
+.project__links a {
   color: var(--clr-neutral-900);
   transition:
     color 200ms ease,
@@ -859,8 +859,8 @@ h3:after {
   display: inline-block;
 }
 
-.project--links a:hover,
-.project--links a:focus-visible {
+.project__links a:hover,
+.project__links a:focus-visible {
   color: var(--clr-primary-500);
   transform: translateY(-2px) scale(1.1);
 }
