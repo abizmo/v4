@@ -78,22 +78,22 @@
   <body>
     <header class="primary-header">
       <div class="container">
-        <div class="nav-wrapper flex">
+        <div class="primary-header__wrapper flex">
           <a href="#"><img src="./images/logo.svg" alt="abizmo.dev" /></a>
           <button
-            class="mobile-nav-toggle"
+            class="primary-header__toggle"
             aria-controls="primary-navigation"
             aria-expanded="false"
           >
-            <i class="fa-solid fa-bars fa-xl icon-menu" aria-hidden="true"></i>
-            <i class="fa-solid fa-xmark fa-xl icon-close" aria-hidden="true"></i>
+            <i class="fa-solid fa-bars fa-xl primary-header__toggle-icon--menu" aria-hidden="true"></i>
+            <i class="fa-solid fa-xmark fa-xl primary-header__toggle-icon--close" aria-hidden="true"></i>
             <span class="visually-hidden">Menu</span>
           </button>
-          <nav class="primary-navigation" id="primary-navigation">
-            <button class="nav-close" aria-label="Close menu" title="Close menu">
+          <nav class="primary-header__nav" id="primary-navigation">
+            <button class="primary-header__nav-close" aria-label="Close menu" title="Close menu">
               <i class="fa-solid fa-xmark fa-2x" aria-hidden="true"></i>
             </button>
-            <ul aria-label="Primary" role="list" class="nav-list">
+            <ul aria-label="Primary" role="list" class="primary-header__nav-list">
               <li><a href="#about">About</a></li>
               <li><a href="#works">Works</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -112,8 +112,8 @@
                   aria-label="Toggle theme"
                   title="Toggle dark/light theme"
                 >
-                  <i class="fa-solid fa-sun fa-xl icon-sun" aria-hidden="true"></i>
-                  <i class="fa-solid fa-moon fa-xl icon-moon" aria-hidden="true"></i>
+                  <i class="fa-solid fa-sun fa-xl theme-toggle__icon--sun" aria-hidden="true"></i>
+                  <i class="fa-solid fa-moon fa-xl theme-toggle__icon--moon" aria-hidden="true"></i>
                 </button>
               </li>
             </ul>
@@ -122,15 +122,15 @@
       </div>
     </header>
     <main>
-      <section id="hero">
-        <div class="container hero-container grid gap-8">
+      <section id="hero" class="hero">
+        <div class="container hero__container grid gap-8">
           <div class="grid gap-5">
             <h1 class="fs-500 lh-heading">Hi, my name is</h1>
             <div class="lh-heading">
               <h2 class="fs-900 fw-bold">Abián Izquierdo.</h2>
               <p class="block fs-800 fw-bold">I build things for the web.</p>
             </div>
-            <p class="intro">
+            <p class="hero__intro">
               I'm a web developer specialized in frontend. Currently, I'm
               working at the
               <a href="https://efectodonacion.com/" target="_blank" rel="noreferrer noopener"
@@ -168,7 +168,7 @@
                 accessible and inclusive interfaces. Here are a few technologies I've been working
                 with recently:
               </p>
-              <ul role="list" class="technologies">
+              <ul role="list" class="about__technologies">
                 <li>JavaScript</li>
                 <li>TypeScript</li>
                 <li>React</li>
@@ -177,7 +177,7 @@
                 <li>Firebase</li>
               </ul>
             </div>
-            <div class="about-media">
+            <div class="about__media">
               <img
                 src="./images/me.webp"
                 alt="Abián Izquierdo"
@@ -196,7 +196,7 @@
           </h3>
           <div class="grid gap-10 justify-items-center">
             <article class="project animate-on-scroll">
-              <div class="project--media">
+              <div class="project__media">
                 <img
                   src="./images/job-listings.webp"
                   alt="job listings"
@@ -204,23 +204,23 @@
                   decoding="async"
                 />
               </div>
-              <div class="project--body grid">
+              <div class="project__body grid">
                 <h4 class="capitalize fs-600 fw-bold lh-heading">
                   Job listings with filtering solution
                 </h4>
-                <p class="project--description">
+                <p class="project__description">
                   A job listing made with create-react-app. This list can be filtered using tags.
                   For this challenge I decided to use TypeScript and styled-components. For the
                   first time I tried Storybook and used it to test some visual components.
                 </p>
-                <ul class="project--tools" role="list">
+                <ul class="project__tools" role="list">
                   <li>ReactJs</li>
                   <li>Styled Components</li>
                   <li>React Testing Library</li>
                   <li>Storybook</li>
                   <li>TypeScript</li>
                 </ul>
-                <ul class="project--links" role="list">
+                <ul class="project__links" role="list">
                   <li>
                     <a
                       href="https://github.com/abizmo/static-job-listings"
@@ -241,7 +241,7 @@
               </div>
             </article>
             <article class="project animate-on-scroll">
-              <div class="project--media">
+              <div class="project__media">
                 <img
                   src="./images/interactive-comments.webp"
                   alt="interactive comments"
@@ -249,19 +249,19 @@
                   decoding="async"
                 />
               </div>
-              <div class="project--body grid">
+              <div class="project__body grid">
                 <h4 class="capitalize fs-600 fw-bold lh-heading">Interactive comments section</h4>
-                <p class="project--description">
+                <p class="project__description">
                   This challenge show a prototype for a comments section, in which you can add new
                   comments, delete or edit. Also you can vote or answer other users comments. It is
                   developed with ReactJS and styled-components.
                 </p>
-                <ul class="project--tools" role="list">
+                <ul class="project__tools" role="list">
                   <li>React</li>
                   <li>Styled Components</li>
                   <li>Github actions</li>
                 </ul>
-                <ul class="project--links" role="list">
+                <ul class="project__links" role="list">
                   <li>
                     <a
                       href="https://github.com/abizmo/interactive-comments-section"
@@ -284,8 +284,8 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="content">
-        <div class="container contact-container grid gap-8 animate-on-scroll">
+      <section id="contact" class="content contact">
+        <div class="container contact__container grid gap-8 animate-on-scroll">
           <div class="grid gap-5">
             <h4 class="fs-500 lh-heading">What's next?</h4>
             <h2 class="fs-800 fw-bold">Get In Touch!</h2>
@@ -301,9 +301,9 @@
         </div>
       </section>
     </main>
-    <footer class="bg-neutral-900 text-neutral-200">
-      <div class="container footer-container">
-        <ul class="social-icons" role="list" aria-label="Social links">
+    <footer class="footer bg-neutral-900 text-neutral-200">
+      <div class="container footer__container">
+        <ul class="footer__social-icons" role="list" aria-label="Social links">
           <li>
             <a
               aria-label="email"

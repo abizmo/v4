@@ -1,8 +1,8 @@
 const primaryHeader = document.querySelector('.primary-header');
-const navToggle = document.querySelector('.mobile-nav-toggle');
-const navClose = document.querySelector('.nav-close');
-const primaryNavigation = document.querySelector('.primary-navigation');
-const navLinks = document.querySelectorAll('.primary-navigation a');
+const navToggle = document.querySelector('.primary-header__toggle');
+const navClose = document.querySelector('.primary-header__nav-close');
+const primaryNavigation = document.querySelector('.primary-header__nav');
+const navLinks = document.querySelectorAll('.primary-header__nav a');
 
 function openMenu() {
   navToggle.setAttribute('aria-expanded', 'true');
