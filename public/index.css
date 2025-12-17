@@ -737,14 +737,6 @@ h3:after {
 
 .about img {
   box-shadow: 4px 4px 16px var(--clr-neutral-900);
-  transition:
-    transform 300ms ease,
-    box-shadow 300ms ease;
-}
-
-.about img:hover {
-  transform: scale(1.02) translateY(-4px);
-  box-shadow: 6px 6px 24px var(--clr-neutral-900);
 }
 
 .technologies {
@@ -787,22 +779,6 @@ h3:after {
   border-radius: var(--sizes-1);
   overflow: hidden;
   position: relative;
-  transition:
-    transform 300ms ease,
-    box-shadow 300ms ease;
-}
-
-.project:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--clr-shadow);
-}
-
-.project img {
-  transition: transform 400ms ease;
-}
-
-.project:hover img {
-  transform: scale(1.05);
 }
 
 @media (max-width: 36.5rem) {
