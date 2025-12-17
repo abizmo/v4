@@ -779,6 +779,7 @@ h3:after {
   border-radius: var(--sizes-1);
   overflow: hidden;
   position: relative;
+  box-shadow: 0 4px 12px var(--clr-shadow);
 }
 
 @media (max-width: 36.5rem) {
