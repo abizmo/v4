@@ -673,7 +673,7 @@ a:not([class]):focus-visible {
 }
 
 /* hero section */
-.hero-container {
+.hero__container {
   align-content: center;
   justify-items: start;
   min-height: 100vh;
@@ -684,7 +684,7 @@ a:not([class]):focus-visible {
 
 /* Adjust hero for landscape orientation on small screens */
 @media (max-height: 500px) and (orientation: landscape) {
-  .hero-container {
+  .hero__container {
     min-height: auto;
     padding-top: 8rem; /* Increased from 6rem to give more space */
     padding-bottom: 3rem;
@@ -696,16 +696,16 @@ a:not([class]):focus-visible {
   }
 
   /* Reduce font sizes in landscape to fit better */
-  .hero-container .fs-900 {
+  .hero__container .fs-900 {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
 
-  .hero-container .fs-800 {
+  .hero__container .fs-800 {
     font-size: clamp(1.25rem, 4vw, 2rem);
   }
 }
 
-.intro {
+.hero__intro {
   max-width: 40rem;
 }
 
