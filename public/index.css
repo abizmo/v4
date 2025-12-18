@@ -79,6 +79,9 @@
 
   --z-index-top: 9;
 
+  /* Border Radius Tokens */
+  --radius-interactive: 6px; /* For buttons, links, and clickable elements */
+
   /* Animation & Transition Tokens */
   --transition-base: 200ms ease;
   --transition-medium: 300ms ease;
@@ -298,7 +301,7 @@ a:not([class]):focus-visible {
 .button {
   background: transparent;
   border: 2px solid var(--clr-primary-500);
-  border-radius: 6px;
+  border-radius: var(--radius-interactive);
   color: var(--clr-primary-500);
   font-size: var(--fs-button);
   line-height: 1.2;
@@ -410,7 +413,7 @@ a:not([class]):focus-visible {
   align-items: center;
   justify-content: flex-start;
   padding: 0.875rem 1rem;
-  border-radius: 6px;
+  border-radius: var(--radius-interactive);
   transition:
     background-color var(--transition-base),
     color var(--transition-base);
@@ -452,7 +455,7 @@ a:not([class]):focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--radius-interactive);
   transition:
     background-color var(--transition-base),
     color var(--transition-base),
@@ -569,7 +572,7 @@ a:not([class]):focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--radius-interactive);
   transition:
     background-color var(--transition-base),
     color var(--transition-base);
@@ -902,7 +905,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--radius-interactive);
   transition:
     background-color var(--transition-base),
     transform var(--transition-base);
